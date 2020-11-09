@@ -1,15 +1,10 @@
 {
-  "name": "generator-nod",
+  "name": "react-maps",
   "version": "0.0.1",
-  "description": "My node module",
-  "license": "MIT",
-  "repository": "diegohaz/nod",
+  "description": "",
+  "license": "",
+  "repository": "gisouzap/react-map",
   "main": "dist/index.js",
-  "author": {
-    "name": "Diego Haz",
-    "email": "hazdiego@gmail.com",
-    "url": "https://github.com/diegohaz"
-  },
   "files": [
     "dist",
     "src"
@@ -20,11 +15,10 @@
     "postcoverage": "open-cli coverage/lcov-report/index.html",
     "lint": "eslint .",
     "flow": "flow check",
-    "docs": "documentation readme src --section=API",
     "postdocs": "git add README.md",
     "clean": "rimraf dist",
     "flowbuild": "flow-copy-source src dist",
-    "prebuild": "npm run docs && npm run clean && npm run flowbuild",
+    "prebuild": "npm run clean && npm run flowbuild",
     "build": "babel src -d dist",
     "prerelease": "npm run lint && npm test && npm run build",
     "release": "standard-version",
@@ -41,10 +35,12 @@
       "git add"
     ]
   },
-  "keywords": [
-    "generator-nod"
-  ],
-  "dependencies": {},
+  "dependencies": {
+    "@googlemaps/js-api-loader": "1.8.0",
+    "prop-types": "15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
+  },
   "devDependencies": {
     "@babel/cli": "7.4.4",
     "@babel/core": "7.4.5",
@@ -53,6 +49,7 @@
     "@babel/preset-flow": "7.0.0",
     "babel-eslint": "10.0.2",
     "babel-jest": "24.8.0",
+    "babel-preset-react": "6.24.1",
     "documentation": "11.0.1",
     "eslint": "6.0.0",
     "eslint-config-airbnb-base": "13.1.0",
